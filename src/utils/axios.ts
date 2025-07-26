@@ -2,9 +2,9 @@ import { Axios } from "axios";
 import { logError, logWarning, logInfo } from './logger.js';
 
 // Constants for the v4 repository structure
-const REPO_OWNER = 'shadcn-ui';
-const REPO_NAME = 'ui';
-const REPO_BRANCH = 'main';
+const REPO_OWNER = 'unovue';
+const REPO_NAME = 'shadcn-vue';
+const REPO_BRANCH = 'dev';
 const V4_BASE_PATH = 'apps/v4';
 const REGISTRY_PATH = `${V4_BASE_PATH}/registry`;
 const NEW_YORK_V4_PATH = `${REGISTRY_PATH}/new-york-v4`;
@@ -46,7 +46,7 @@ const githubRaw = new Axios({
  * @returns Promise with component source code
  */
 async function getComponentSource(componentName: string): Promise<string> {
-    const componentPath = `${NEW_YORK_V4_PATH}/ui/${componentName.toLowerCase()}.tsx`;
+    const componentPath = `${NEW_YORK_V4_PATH}/ui/${componentName.toLowerCase()}/${componentName.toLowerCase().charAt(0).toUpperCase() + componentName.toLowerCase().slice(1)}.vue`;
     
     try {
         const response = await githubRaw.get(`/${componentPath}`);
@@ -62,7 +62,7 @@ async function getComponentSource(componentName: string): Promise<string> {
  * @returns Promise with component demo code
  */
 async function getComponentDemo(componentName: string): Promise<string> {
-    const demoPath = `${NEW_YORK_V4_PATH}/examples/${componentName.toLowerCase()}-demo.tsx`;
+    const demoPath = `${V4_BASE_PATH}/components/${componentName.toLowerCase().charAt(0).toUpperCase() + componentName.toLowerCase().slice(1)}Demo.vue`;
     
     try {
         const response = await githubRaw.get(`/${demoPath}`);
@@ -86,8 +86,8 @@ async function getAvailableComponents(): Promise<string[]> {
         }
         
         const components = response.data
-            .filter((item: any) => item.type === 'file' && item.name.endsWith('.tsx'))
-            .map((item: any) => item.name.replace('.tsx', ''));
+            .filter((item: any) => item.type === 'file' && item.name.endsWith('.vue'))
+            .map((item: any) => item.name.replace('.vue', ''));
             
         if (components.length === 0) {
             throw new Error('No components found in the registry');
@@ -356,21 +356,16 @@ function getBasicV4Structure(): any {
                 path: `${NEW_YORK_V4_PATH}/ui`,
                 type: 'directory',
                 description: 'Contains all v4 UI components',
-                note: 'Component files (.tsx) are located here'
+                note: 'Component files (.vue) are located here'
             },
             'examples': {
-                path: `${NEW_YORK_V4_PATH}/examples`,
+                path: `${V4_BASE_PATH}/components`,
                 type: 'directory', 
                 description: 'Contains component demo examples',
                 note: 'Demo files showing component usage'
             },
-            'hooks': {
-                path: `${NEW_YORK_V4_PATH}/hooks`,
-                type: 'directory',
-                description: 'Contains custom React hooks'
-            },
             'lib': {
-                path: `${NEW_YORK_V4_PATH}/lib`,
+                path: `${V4_BASE_PATH}/lib`,
                 type: 'directory',
                 description: 'Contains utility libraries and functions'
             }
@@ -529,9 +524,9 @@ async function getBlockCode(blockName: string, includeComponents: boolean = true
     const blocksPath = `${NEW_YORK_V4_PATH}/blocks`;
     
     try {
-        // First, check if it's a simple block file (.tsx)
+        // First, check if it's a simple block file (.vue)
         try {
-            const simpleBlockResponse = await githubRaw.get(`/${blocksPath}/${blockName}.tsx`);
+            const simpleBlockResponse = await githubRaw.get(`/${blocksPath}/${blockName}.vue`);
             if (simpleBlockResponse.status === 200) {
                 const code = simpleBlockResponse.data;
                 
@@ -709,7 +704,7 @@ async function getAvailableBlocks(category?: string): Promise<any> {
         
         for (const item of response.data) {
             const blockInfo: any = {
-                name: item.name.replace('.tsx', ''),
+                name: item.name.replace('.vue', ''),
                 type: item.type === 'file' ? 'simple' : 'complex',
                 path: item.path,
                 size: item.size || 0,
@@ -819,7 +814,7 @@ function setGitHubApiKey(apiKey: string): void {
         // Remove authorization header if empty key provided
         delete (githubApi.defaults.headers as any)['Authorization'];
         console.error('GitHub API key removed - using unauthenticated requests');
-        console.error('For higher rate limits and reliability, provide a GitHub API token. See setup instructions: https://github.com/Jpisnice/shadcn-ui-mcp-server#readme');
+        console.error('For higher rate limits and reliability, provide a GitHub API token. See setup instructions: https://github.com/Jpisnice/shadcn-vue-mcp-server#readme');
     }
 }
 

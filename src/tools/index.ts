@@ -72,7 +72,7 @@ export const tools = {
   },
   'get_directory_structure': {
     name: 'get_directory_structure',
-    description: 'Get the directory structure of the shadcn-ui v4 repository',
+    description: 'Get the directory structure of the shadcn-vue v4 repository',
     inputSchema: {
       type: 'object',
       properties: getDirectoryStructureSchema

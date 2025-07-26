@@ -134,18 +134,18 @@ export const getResourceTemplate = (uri: string) => {
               "cd my-app",
               "",
               "Add shadcn/ui to your project:",
-              packageManager === 'npm' ? 'npx shadcn-ui@latest init' : 
-              packageManager === 'pnpm' ? 'pnpm dlx shadcn-ui@latest init' :
-              packageManager === 'yarn' ? 'yarn dlx shadcn-ui@latest init' :
-              packageManager === 'bun' ? 'bunx --bun shadcn-ui@latest init' : 'npx shadcn-ui@latest init',
+              packageManager === 'npm' ? 'npx shadcn-vue@latest init' : 
+              packageManager === 'pnpm' ? 'pnpm dlx shadcn-vue@latest init' :
+              packageManager === 'yarn' ? 'yarn dlx shadcn-vue@latest init' :
+              packageManager === 'bun' ? 'bunx --bun shadcn-vue@latest init' : 'npx shadcn-vue@latest init',
               "",
               "Follow the prompts to select your preferences",
               "",
               "Once initialized, you can add components:",
-              packageManager === 'npm' ? 'npx shadcn-ui@latest add button' : 
-              packageManager === 'pnpm' ? 'pnpm dlx shadcn-ui@latest add button' :
-              packageManager === 'yarn' ? 'yarn dlx shadcn-ui@latest add button' :
-              packageManager === 'bun' ? 'bunx --bun shadcn-ui@latest add button' : 'npx shadcn-ui@latest add button',
+              packageManager === 'npm' ? 'npx shadcn-vue@latest add button' : 
+              packageManager === 'pnpm' ? 'pnpm dlx shadcn-vue@latest add button' :
+              packageManager === 'yarn' ? 'yarn dlx shadcn-vue@latest add button' :
+              packageManager === 'bun' ? 'bunx --bun shadcn-vue@latest add button' : 'npx shadcn-vue@latest add button',
               "",
               "Now you can use the component in your project!"
             ]
@@ -166,18 +166,18 @@ export const getResourceTemplate = (uri: string) => {
               "npx tailwindcss init -p",
               "",
               "Add shadcn/ui to your project:",
-              packageManager === 'npm' ? 'npx shadcn-ui@latest init' : 
-              packageManager === 'pnpm' ? 'pnpm dlx shadcn-ui@latest init' :
-              packageManager === 'yarn' ? 'yarn dlx shadcn-ui@latest init' :
-              packageManager === 'bun' ? 'bunx --bun shadcn-ui@latest init' : 'npx shadcn-ui@latest init',
+              packageManager === 'npm' ? 'npx shadcn-vue@latest init' : 
+              packageManager === 'pnpm' ? 'pnpm dlx shadcn-vue@latest init' :
+              packageManager === 'yarn' ? 'yarn dlx shadcn-vue@latest init' :
+              packageManager === 'bun' ? 'bunx --bun shadcn-vue@latest init' : 'npx shadcn-vue@latest init',
               "",
               "Follow the prompts to select your preferences",
               "",
               "Once initialized, you can add components:",
-              packageManager === 'npm' ? 'npx shadcn-ui@latest add button' : 
-              packageManager === 'pnpm' ? 'pnpm dlx shadcn-ui@latest add button' :
-              packageManager === 'yarn' ? 'yarn dlx shadcn-ui@latest add button' :
-              packageManager === 'bun' ? 'bunx --bun shadcn-ui@latest add button' : 'npx shadcn-ui@latest add button',
+              packageManager === 'npm' ? 'npx shadcn-vue@latest add button' : 
+              packageManager === 'pnpm' ? 'pnpm dlx shadcn-vue@latest add button' :
+              packageManager === 'yarn' ? 'yarn dlx shadcn-vue@latest add button' :
+              packageManager === 'bun' ? 'bunx --bun shadcn-vue@latest add button' : 'npx shadcn-vue@latest add button',
               "",
               "Now you can use the component in your project!"
             ]
@@ -198,18 +198,18 @@ export const getResourceTemplate = (uri: string) => {
               "npx tailwindcss init -p",
               "",
               "Add shadcn/ui to your project:",
-              packageManager === 'npm' ? 'npx shadcn-ui@latest init' : 
-              packageManager === 'pnpm' ? 'pnpm dlx shadcn-ui@latest init' :
-              packageManager === 'yarn' ? 'yarn dlx shadcn-ui@latest init' :
-              packageManager === 'bun' ? 'bunx --bun shadcn-ui@latest init' : 'npx shadcn-ui@latest init',
+              packageManager === 'npm' ? 'npx shadcn-vue@latest init' : 
+              packageManager === 'pnpm' ? 'pnpm dlx shadcn-vue@latest init' :
+              packageManager === 'yarn' ? 'yarn dlx shadcn-vue@latest init' :
+              packageManager === 'bun' ? 'bunx --bun shadcn-vue@latest init' : 'npx shadcn-vue@latest init',
               "",
               "Follow the prompts to select your preferences",
               "",
               "Once initialized, you can add components:",
-              packageManager === 'npm' ? 'npx shadcn-ui@latest add button' : 
-              packageManager === 'pnpm' ? 'pnpm dlx shadcn-ui@latest add button' :
-              packageManager === 'yarn' ? 'yarn dlx shadcn-ui@latest add button' :
-              packageManager === 'bun' ? 'bunx --bun shadcn-ui@latest add button' : 'npx shadcn-ui@latest add button',
+              packageManager === 'npm' ? 'npx shadcn-vue@latest add button' : 
+              packageManager === 'pnpm' ? 'pnpm dlx shadcn-vue@latest add button' :
+              packageManager === 'yarn' ? 'yarn dlx shadcn-vue@latest add button' :
+              packageManager === 'bun' ? 'bunx --bun shadcn-vue@latest add button' : 'npx shadcn-vue@latest add button',
               "",
               "Now you can use the component in your project!"
             ]
@@ -220,18 +220,18 @@ export const getResourceTemplate = (uri: string) => {
               "Make sure you have a React project set up",
               "",
               "Add shadcn/ui to your project:",
-              packageManager === 'npm' ? 'npx shadcn-ui@latest init' : 
-              packageManager === 'pnpm' ? 'pnpm dlx shadcn-ui@latest init' :
-              packageManager === 'yarn' ? 'yarn dlx shadcn-ui@latest init' :
-              packageManager === 'bun' ? 'bunx --bun shadcn-ui@latest init' : 'npx shadcn-ui@latest init',
+              packageManager === 'npm' ? 'npx shadcn-vue@latest init' : 
+              packageManager === 'pnpm' ? 'pnpm dlx shadcn-vue@latest init' :
+              packageManager === 'yarn' ? 'yarn dlx shadcn-vue@latest init' :
+              packageManager === 'bun' ? 'bunx --bun shadcn-vue@latest init' : 'npx shadcn-vue@latest init',
               "",
               "Follow the prompts to select your preferences",
               "",
               "Once initialized, you can add components:",
-              packageManager === 'npm' ? 'npx shadcn-ui@latest add button' : 
-              packageManager === 'pnpm' ? 'pnpm dlx shadcn-ui@latest add button' :
-              packageManager === 'yarn' ? 'yarn dlx shadcn-ui@latest add button' :
-              packageManager === 'bun' ? 'bunx --bun shadcn-ui@latest add button' : 'npx shadcn-ui@latest add button',
+              packageManager === 'npm' ? 'npx shadcn-vue@latest add button' : 
+              packageManager === 'pnpm' ? 'pnpm dlx shadcn-vue@latest add button' :
+              packageManager === 'yarn' ? 'yarn dlx shadcn-vue@latest add button' :
+              packageManager === 'bun' ? 'bunx --bun shadcn-vue@latest add button' : 'npx shadcn-vue@latest add button',
               "",
               "Now you can use the component in your project!"
             ]

@@ -38,7 +38,7 @@ export const schema = {
   },
   owner: {
     type: 'string',
-    description: 'Repository owner (default: "shadcn-ui")'
+    description: 'Repository owner (default: "shadcn-vue")'
   },
   repo: {
     type: 'string',

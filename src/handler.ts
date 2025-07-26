@@ -150,7 +150,7 @@ export const setupHandlers = (server: Server): void => {
           },
           {
             name: 'get_directory_structure',
-            description: 'Get the directory structure of the shadcn-ui v4 repository',
+            description: 'Get the directory structure of the unovue v4 repository',
             inputSchema: {
               type: 'object',
               properties: {
@@ -160,11 +160,11 @@ export const setupHandlers = (server: Server): void => {
                 },
                 owner: {
                   type: 'string',
-                  description: 'Repository owner (default: "shadcn-ui")',
+                  description: 'Repository owner (default: "unovue")',
                 },
                 repo: {
                   type: 'string',
-                  description: 'Repository name (default: "ui")',
+                  description: 'Repository name (default: "shadcn-vue")',
                 },
                 branch: {
                   type: 'string',

@@ -6,9 +6,9 @@
  * Provides AI assistants with access to component source code, demos, blocks, and metadata.
  * 
  * Usage:
- *   npx shadcn-ui-mcp-server
- *   npx shadcn-ui-mcp-server --github-api-key YOUR_TOKEN
- *   npx shadcn-ui-mcp-server -g YOUR_TOKEN
+ *   npx shadcn-vue-mcp-server
+ *   npx shadcn-vue-mcp-server --github-api-key YOUR_TOKEN
+ *   npx shadcn-vue-mcp-server -g YOUR_TOKEN
  */
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
@@ -34,7 +34,7 @@ async function parseArgs() {
 Shadcn UI v4 MCP Server
 
 Usage:
-  npx shadcn-ui-mcp-server [options]
+  npx shadcn-vue-mcp-server [options]
 
 Options:
   --github-api-key, -g <token>    GitHub Personal Access Token for API access
@@ -42,15 +42,15 @@ Options:
   --version, -v                   Show version information
 
 Examples:
-  npx shadcn-ui-mcp-server
-  npx shadcn-ui-mcp-server --github-api-key ghp_your_token_here
-  npx shadcn-ui-mcp-server -g ghp_your_token_here
+  npx shadcn-vue-mcp-server
+  npx shadcn-vue-mcp-server --github-api-key ghp_your_token_here
+  npx shadcn-vue-mcp-server -g ghp_your_token_here
 
 Environment Variables:
   GITHUB_PERSONAL_ACCESS_TOKEN    Alternative way to provide GitHub token
   LOG_LEVEL                       Log level (debug, info, warn, error) - default: info
 
-For more information, visit: https://github.com/Jpisnice/shadcn-ui-mcp-server
+For more information, visit: https://github.com/Jpisnice/shadcn-vue-mcp-server
 `);
     process.exit(0);
   }
@@ -69,9 +69,9 @@ For more information, visit: https://github.com/Jpisnice/shadcn-ui-mcp-server
       
       const packageContent = fs.readFileSync(packagePath, 'utf8');
       const packageJson = JSON.parse(packageContent);
-      console.log(`shadcn-ui-mcp-server v${packageJson.version}`);
+      console.log(`shadcn-vue-mcp-server v${packageJson.version}`);
     } catch (error) {
-      console.log('shadcn-ui-mcp-server v1.0.2');
+      console.log('shadcn-vue-mcp-server v1.0.2');
     }
     process.exit(0);
   }
@@ -110,7 +110,7 @@ async function main() {
     // Following MCP SDK 1.16.0 best practices
     const server = new Server(
       {
-        name: "shadcn-ui-mcp-server",
+        name: "shadcn-vue-mcp-server",
         version: "1.0.2",
       },
       {
@@ -221,7 +221,7 @@ async function main() {
               }
             },
             "get_directory_structure": {
-              description: "Get the directory structure of the shadcn-ui v4 repository",
+              description: "Get the directory structure of the shadcn-vue v4 repository",
               inputSchema: {
                 type: "object",
                 properties: {
@@ -231,7 +231,7 @@ async function main() {
                   },
                   owner: {
                     type: "string",
-                    description: "Repository owner (default: \"shadcn-ui\")"
+                    description: "Repository owner (default: \"shadcn-vue\")"
                   },
                   repo: {
                     type: "string",
